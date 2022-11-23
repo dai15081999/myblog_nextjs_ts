@@ -42,6 +42,7 @@ export interface IArticlesAttribute {
     Image: IImageData;
     createdAt: string;
     author: IAuthor;
+    shortDescription: string;
 }
 
 export interface IArticle {

@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className='flex item-center justify-between py-6'>
         <Link href="/">
             <div className='flex items-center cursor-pointer'>
-                <Image src="/logo.png" width={35} height={35}/>
+                <Image alt={''} src="/logo.png" width={35} height={35}/>
                 <span className='font-bolg ml-2 text-primary'>Coder's Blog</span>
             </div>
         </Link>

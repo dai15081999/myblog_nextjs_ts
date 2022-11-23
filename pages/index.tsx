@@ -5,6 +5,9 @@ import { ICollectionResponse, ICategory, IArticle } from '../types'
 import { AxiosResponse } from 'axios';
 import Tabs from '../components/Tabs'
 import ArticleList from '../components/ArticleList';
+import qs from 'qs';
+import Pagination from '../components/Pagination';
+
 
 interface IPropTypes {
   categories: {
@@ -28,13 +31,22 @@ interface IPropTypes {
     <Tabs categories={categories.items}/>
 
     <ArticleList articles={articles.items}/>
+
+    <Pagination/>
     </div>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
+  const options = {
+    populate: ['author.avatar'],
+    sort: ['id:desc']
+  }
 
-  const { data: articles }: AxiosResponse<ICollectionResponse<IArticle[]>> = await fetchArticles();
+  const queryString = qs.stringify(options);
+
+
+  const { data: articles }: AxiosResponse<ICollectionResponse<IArticle[]>> = await fetchArticles(queryString);
 
   const { data: categories }: AxiosResponse<ICollectionResponse<ICategory[]>> = await fetchCategories()
   return {
