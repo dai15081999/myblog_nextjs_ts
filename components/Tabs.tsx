@@ -1,22 +1,19 @@
 import Link from 'next/link';
-import React from 'react'
-import { ICategory } from '../types'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import React from 'react';
+import { ICategory } from '../types';
 
-interface IPropTypes {
+interface IPropType {
     categories: ICategory[];
+    handleOnSearch: (query: string) => void;
 }
+const Tabs = ({ categories, handleOnSearch }: IPropType) => {
+    const router = useRouter();
 
-const Tabs = ({ categories }: IPropTypes) => {
-    const router = useRouter()
-
-    function isActiveLink(category: ICategory) {
+    const isActiveLink = (category: ICategory) => {
         return category.attributes.Slug === router.query.category;
-    }
+    };
 
-    function handleOnSearch(query: string) {
-
-    }
     return (
         <div className="my-8 flex items-center justify-between border-b-2 border-gray-100">
             <ul className="flex items-center">
@@ -61,7 +58,7 @@ const Tabs = ({ categories }: IPropTypes) => {
                 <input
                     onChange={(e) => handleOnSearch(e.target.value)}
                     type="text"
-                    placeholder="Search"
+                    placeholder="Tìm kiếm"
                     className="outline-none px-2 py-1 ml-1"
                 />
             </div>
@@ -69,4 +66,4 @@ const Tabs = ({ categories }: IPropTypes) => {
     );
 };
 
-export default Tabs
+export default Tabs;

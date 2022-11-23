@@ -3,22 +3,22 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="text-gray-600 mt-12 bottom-0 left-0 bg-white w-full">
+        <footer className="text-gray-600 mt-12 fixed bottom-0 left-0 bg-white w-full">
             <div className="container mx-auto flex items-center flex-col sm:flex-row py-8">
                 <a
                     href="/"
                     className="flex items-center justify-center md:justify-start text-gray-900">
-                    <Image alt='' src={'/logo.png'} height={35} width={40} />
-                    <span className="ml-3 text-md">Coder's Blog</span>
+                    <Image src={'/logo.png'} height={35} width={40} />
+                    <span className="ml-3 text-md">Đại blog</span>
                 </a>
                 <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                    © 2022 Coder's blog —
+                    © 2022 Đại dev
                     <a
                         href="https://twitter.com/codersgyan"
                         className="text-gray-600 ml-1"
                         rel="noopener noreferrer"
                         target="_blank">
-                        @coder'sGyan
+                        @dai15081999
                     </a>
                 </p>
                 <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

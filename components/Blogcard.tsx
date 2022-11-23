@@ -16,12 +16,11 @@ const Blogcard = ({ article }: IPropType) => {
                 </h1>
             </Link>
             <div className="flex items-center my-4">
-                <div className="rounded overflow-hidden flex items-center justify-center mr-2">
+                <div className="rounded-lg overflow-hidden flex items-center justify-center mr-2">
                     <Image
                         src={`http://localhost:1337${article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`}
                         height={40}
                         width={40}
-                        alt=""
                     />
                 </div>
                 <span className="text-sm font-bold text-gray-600">
@@ -34,7 +33,7 @@ const Blogcard = ({ article }: IPropType) => {
                 </span>
             </div>
             <div className="text-gray-500">
-                {article.attributes.shortDescription.slice(0, 250)} {' '}
+                {article.attributes.shortDescription.slice(0, 250)}{' '}
                 {article.attributes.shortDescription.length > 250 ? '...' : ''}
             </div>
         </div>
